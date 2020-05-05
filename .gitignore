@@ -2,3 +2,5 @@ chromedriver
 target/
 .classpath
 .project
+.DS_Store
+*.jpg
