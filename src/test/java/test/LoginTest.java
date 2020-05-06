@@ -39,11 +39,11 @@ public class LoginTest extends BaseTest {
         loginPageChrome.clickBtn();
         assertEquals(loginPageChrome.getIncorrectText(), "That password was incorrect. Please try again.");
         
-        // LoginPage loginPageFirefox = homePageFirefox.clickLoginButton();
-        // loginPageFirefox.setUsername("auatesting");
-        // loginPageFirefox.setPassword("badpass");
-        // loginPageFirefox.clickBtn();
-        // assertEquals(loginPageFirefox.getIncorrectText(), "That password was incorrect. Please try again.");
+        LoginPage loginPageFirefox = homePageFirefox.clickLoginButton();
+        loginPageFirefox.setUsername("auatesting");
+        loginPageFirefox.setPassword("badpass");
+        loginPageFirefox.clickBtn();
+        assertEquals(loginPageFirefox.getIncorrectText(), "That password was incorrect. Please try again.");
 
     }
 }
