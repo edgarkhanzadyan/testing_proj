@@ -13,6 +13,7 @@ public class MainPage {
     private By overlay = By.xpath(
             ".//div[@class='ReactModal__Overlay ReactModal__Overlay--after-open modal__backdrop js-modal-backdrop']");
     private By profilePageButton = By.xpath(".//figure[@data-a-target='dropdown-avatar']");
+    private By browsePageButton = By.xpath(".//a[@data-test-selector='top-nav__browse-link']");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -21,6 +22,13 @@ public class MainPage {
     public UserProfilePage goToUserProfilePage() {
         driver.findElement(profilePageButton).click();
         return new UserProfilePage(driver);
+    }
+
+    public BrowsePage goToBrowsePage() {
+        WebDriverWait wait = new WebDriverWait(this.driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(browsePageButton));
+        driver.findElement(browsePageButton).click();
+        return new BrowsePage(driver);
     }
 
     public String getUsername() {
